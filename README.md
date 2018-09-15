@@ -102,15 +102,11 @@ $input.typeahead.on('typeahead:valueUpdated', function(ev, value) {
 // { zip_code: "72143", city: "Searcy", state: "AR" }
 ```
 
----
-
 ## Typeahead Styles
 
 The is minimal style provided. You can override these easily to match your current style.
 
 ### [Default Style](https://github.com/nickrstan/ezgeoquery-typeahead/blob/master/src/style.css)
-
----
 
 ## Ez Geo API
 
