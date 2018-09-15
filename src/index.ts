@@ -1,8 +1,6 @@
-import { MyLibrary } from './MyLibrary';
+import './style.css';
+import { InitTypeahead } from './EzGeoTypeahead';
 
-console.log('See this in your browser console: Typescript Webpack Starter Launched');
-
-const myLibrary = new MyLibrary();
-const result = myLibrary.executeDependency();
-
-console.log(`A random number ${result}`);
+export function init(apikey: string) {
+    return new InitTypeahead(apikey);
+}
