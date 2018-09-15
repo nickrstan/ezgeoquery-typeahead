@@ -114,9 +114,9 @@ There is minimal style provided. You can override these easily to match your cur
 
 Behind the typeahead library is the [Ez Geo API] (https://ezgeoquery.us/). We've written algorithms to interact with our data in order to return city, state, zip results reliably and consistently, making building anything (such as registration forms with user's geographical data, address, etc.) that requires this data a breeze.
 
-Below you can see the various combinations that the plugin accepts and will return results for. The plugin also searches by partial match and allows you to enter a portion of any part of the combination, such as "Sea, WA 981" for Seattle, Washington locations whose zip start with 981XX.
+Below you can see the various search query combinations that the API accepts and will return results for. Our plugin also searches by partial match and allows you to enter a portion of any part of the combination, such as "Sea, WA 981" for Seattle, Washington locations whose zip start with 981XX.
 
-Check out all the formats below:
+Formats that work with our API/plugin:
 
 `City, State, Zip`
 
