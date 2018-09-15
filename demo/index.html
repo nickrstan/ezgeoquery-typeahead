@@ -1,0 +1,100 @@
+<!doctype html>
+
+    <html lang="en">
+
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Ez Geo Query</title>
+        <!-- <base href="/"> -->
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        
+        <style>
+            body {
+                background-color: aliceblue;
+                padding: 5rem;
+                font-size: 100%;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        
+        <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-md-12">
+                    
+                    <div class="card">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Typeahead</h5>
+                            <h6 class="card-subtitle mb-4 text-muted">Search by city or zip</h6>
+
+                            <form>
+                                <div class="form-group">
+                                    <input id="ezgeo" class="form-control form-control-lg typeahead tt-input" type="text" name="cityorzip" placeholder="City or Zip">
+                                </div>
+                            </form>
+
+                            <button class="btn btn-primary getvalue1">
+                                Log current value
+                            </button>
+
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <!-- scripts -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <!-- typeahead.js -->
+        <script type="text/javascript" src="./typeahead.bundle.min.js"></script>
+        <!-- ezgeoquery-typeahead -->
+        <script type="text/javascript" src="../dist/ezgeoquery-typeahead.js"></script>
+        
+        <script>
+
+            /**
+             * Main Document Ready Function (non defered)
+             * 
+             * You could defer this 
+             */
+            $(document).ready(function() {
+            
+                // EzGeoTypeahead
+                var apikey = "<YOUR-API-KEY>";
+
+                // Init the library with your key
+                const ezgeo = EzGeoTypeahead.init(apikey);
+
+                /** @see options for default and optional */
+                const options = {
+                    selectFirstOnClose: true,
+                    setPreviousValueOnEmpty: true,
+                    minLength: 2,
+                }
+
+                var $input = ezgeo.make('#ezgeo', options);
+
+                $('.getvalue1').on('click', function() {
+                    console.log($input.currentValue)
+                });
+            
+            });
+
+        </script>
+
+    </body>
+
+</html>
