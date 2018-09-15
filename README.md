@@ -220,6 +220,12 @@ We would gladly accept pull requests.
 - run `npm run build:prod` to compile
 - commit
 
+## TODO
+
+- [ ] Return results by population
+- [ ] Send more data in the response
+- [ ] More query options
+
 ## License
 
 MIT
