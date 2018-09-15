@@ -72,11 +72,15 @@ The typeahead is built around Bootstrap styles, but does not require Bootstrap c
 
 If you have the required libraries loaded, include [ezgeoquery-typeahead.js](https://github.com/nickrstan/ezgeoquery-typeahead/blob/master/dist/ezgeoquery-typeahead.js).
 
-##### By Script
+##### Download and include
 
 `<script type="text/javascript" src="ezgeoquery-typeahead.js"></script>`
 
-##### Or NPM
+##### UNPKG
+
+`<script type="text/javasctipt" src="https://unpkg.com/ezgeoquery-typeahead@0.2.0/ezgeoquery-typeahead.js"></script>`
+
+##### NPM
 
 `npm install ezgeoquery-typeahead`
 
