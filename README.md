@@ -1,6 +1,6 @@
 # :facepunch: Ez Geo Query
 
-Ez Ego Query is a API #BRENDEN
+Ez Geo Query is an API service to provide autoresult suggestions for City, State ZIP search string combinations. It returns data in a consistent format and is currently being developed to provide more data, such as population, median income, and latitude longitude coordinates. Using this typeahead plugin with the API allows for rapid setup and deployment of geographical autocomplete search fields.
 
 
 ## Ez Geo Typeahead
@@ -110,9 +110,11 @@ The is minimal style provided. You can override these easily to match your curre
 
 ## Ez Geo API
 
-Behind the typeahead library is the [Ez Geo API](https://ezgeoquery.us/). #BRENDEN
+Behind the typeahead library is the [Ez Geo API](https://ezgeoquery.us/). We've written algorithms to interact with our data in order to return city, state, zip results reliably and consistently, making building anything (such as registration forms with user's geographical data, address, etc.) that requires this data a breeze.
 
-list options,
+Below you can see the various combinations that the plugin accepts and will return results for. The plugin also searches by partial match and allows you to enter a portion of any part of the combination, such as "Sea, WA 981" for Seattle, Washington locations whose zip start with 981XX.
+
+Check out all the formats below:
 
 `City, State, Zip`
 
