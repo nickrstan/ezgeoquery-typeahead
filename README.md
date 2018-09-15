@@ -53,6 +53,8 @@ $.get(https://ezgeoquery.us/query/425);
 
 Ez Geo Typeahead is a typeahead library build on top of [typeahead.js](https://github.com/corejavascript/typeahead.js) using the [Ez Geo Query API](https://ezgeoquery.us/). It was designed to be a drop in, turn-key autocomplete solution for querying Zip Codes, Cities and States in the US. Under the hood it also uses the [Bloodhound engine](https://github.com/corejavascript/typeahead.js/blob/master/doc/bloodhound.md) to query the API.
 
+![Ez Geo Query - Typeahead](./screenshot.png)
+
 **NOTE** This is using a *more recently maintained* fork of the original [Twitter Typeahead & Bloodhound](https://github.com/twitter/typeahead.js) repo.
 
 ### Demo
