@@ -106,13 +106,13 @@ $input.typeahead.on('typeahead:valueUpdated', function(ev, value) {
 
 ## Typeahead Styles
 
-The is minimal style provided. You can override these easily to match your current style.
+There is minimal style provided. You can override these easily to match your current/desired style.
 
 ### [Default Style](https://github.com/nickrstan/ezgeoquery-typeahead/blob/master/src/style.css)
 
 ## Ez Geo API
 
-Behind the typeahead library is the [Ez Geo API](https://ezgeoquery.us/). We've written algorithms to interact with our data in order to return city, state, zip results reliably and consistently, making building anything (such as registration forms with user's geographical data, address, etc.) that requires this data a breeze.
+Behind the typeahead library is the [Ez Geo API] (https://ezgeoquery.us/). We've written algorithms to interact with our data in order to return city, state, zip results reliably and consistently, making building anything (such as registration forms with user's geographical data, address, etc.) that requires this data a breeze.
 
 Below you can see the various combinations that the plugin accepts and will return results for. The plugin also searches by partial match and allows you to enter a portion of any part of the combination, such as "Sea, WA 981" for Seattle, Washington locations whose zip start with 981XX.
 
