@@ -5,8 +5,8 @@
   "scripts": {
     "start": "npm run serve:dev",
     "serve": "npm run serve:dev",
-    "serve:dev": "webpack-dev-server --mode development --config ./webpack.config.js --inline --progress --watch",
-    "serve:prod": "cross-env NODE_ENV=production webpack-dev-server  --mode production --config ./webpack.config.js --port 3000 --host 0.0.0.0 --inline --progress  --watch --content-base dist/",
+    "serve:dev": "webpack-dev-server --mode development --config ./webpack.config.js --inline --progress",
+    "serve:prod": "cross-env NODE_ENV=production  --mode production --config ./webpack.config.js --port 3000 --host 0.0.0.0 --inline --progress --content-base dist/",
     "build": "npm run build:dev",
     "build:dev": "webpack --mode development --config ./webpack.config.js --progress --color --display-error-details",
     "build:prod": "cross-env NODE_ENV=production webpack --mode production --config ./webpack.config.js  --progress  --color --display-error-details --bail"
