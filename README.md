@@ -51,7 +51,7 @@ $.get(https://ezgeoquery.us/query/425);
 
 ## Ez Geo Typeahead
 
-Ez Geo Typeahead is a typeahead library build on top of [typeahead.js](https://github.com/corejavascript/typeahead.js) using the [Ez Geo Query API](https://ezgeoquery.us/). It was designed to be a drop in, turn-key autocomplete solution for querying Zip Codes, Cities and States in the US. Under the hood it also uses the [Bloodhound engine](https://github.com/corejavascript/typeahead.js/blob/master/doc/bloodhound.md) to query the API.
+Ez Geo Typeahead is a typeahead library build on top of [typeahead.js](https://github.com/corejavascript/typeahead.js) using the [Ez Geo Query API](https://ezgeoquery.us/). It was designed to be a drop in, turn-key autocomplete solution for querying Zip Codes, Cities and States in the US. Under the hood it also uses the [Bloodhound Engine](https://github.com/corejavascript/typeahead.js/blob/master/doc/bloodhound.md) to query the API.
 
 ![Ez Geo Query - Typeahead](./screenshot.png)
 
@@ -76,13 +76,13 @@ If you have the required libraries loaded, include [ezgeoquery-typeahead.js](htt
 
 `<script type="text/javascript" src="ezgeoquery-typeahead.js"></script>`
 
-##### NPM
+##### Or NPM
 
 `npm install ezgeoquery-typeahead`
 
 ### Get an API key
 
-Head over to [Ez Geo Query](https://ezgeoquery.us) and sign up for *free* to get an API key.
+Head over to [Ez Geo Query](https://ezgeoquery.us) and sign up for *free* account to get an API key.
 
 ### Init the library
 
@@ -124,13 +124,13 @@ Under the hood, we configure most of the options for you. We feel these are opin
 
 ## Typeahead Events
 
-We pass the default events from [typeahead.js events](https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md#events) so you can still access them. All events will be accessed as:
+We pass the default events from [typeahead.js events](https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md#events) so you can still access them. We have added one event on top of the typeahead library. All events will be accessed as:
 
 ```javascript
 $input.typeahead.on('eventName', function() {});
 ```
 
-**NOTE** Every event does not supply the same arguments. See the event descriptions above for details on each event's argument list.
+**NOTE** Every event does not supply the same arguments. See the event descriptions below for details on each event's argument list.
 
 ### [Events](https://ezgeoquery.us/#events)
 
@@ -158,7 +158,7 @@ $input.typeahead.on('typeahead:valueUpdated', function(ev, value) {
 
 ## Typeahead Styles
 
-There is a minimal style included inline. It should work pretty well with any input style. It would work best with a Bootstrap form-control. You can override these easily to match your current/desired style.
+There is a minimal style included inline. It should work pretty well with any input style. It would work best with a Bootstrap `form-control`. You can override these easily to match your current/desired style.
 
 ### [Default Style](https://github.com/nickrstan/ezgeoquery-typeahead/blob/master/src/style.css)
 
@@ -166,13 +166,13 @@ There is a minimal style included inline. It should work pretty well with any in
 
 ## Ez Geo API
 
-Behind the typeahead library is the [Ez Geo API](https://ezgeoquery.us/). We've written algorithms to interact with our data in order to return city, state, zip results reliably and consistently, making building anything (such as registration forms with user's geographical data, address, etc.) that requires this data a breeze.
+Behind the Ez Geo Typeahead library is the [Ez Geo API](https://ezgeoquery.us/). We've written algorithms to interact with our data in order to return city, state, zip results reliably and consistently, making building anything (such as registration forms with user's geographical data, address, etc.) that requires this data a breeze.
 
 Below you can see the various search query combinations that the API accepts and will return results for. Our plugin also searches by partial match and allows you to enter a portion of any part of the combination, such as "Sea, WA 981" for Seattle, Washington locations whose zip start with 981XX.
 
 ### Getting Started
 
-First, get your *free* API key from [Ez Geo API](https://ezgeoquery.us/). You can then begin to query our endpoints. Currently Ez Geo API has two endpoints available.
+First, get your *free* API key from [Ez Geo Query](https://ezgeoquery.us/). You can then begin to query our endpoints. Currently Ez Geo Query API has two endpoints available.
 
 #### Authorization Header
 
