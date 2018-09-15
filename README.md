@@ -1,8 +1,7 @@
 # :facepunch: Ez Geo Query
+ 
+Ez Geo Query is an API service to provide autoresult suggestions for City, State, ZIP search string combinations. It returns data in a consistent format and is currently being developed to provide more data, such as population, median income, and latitude longitude coordinates. Using the typeahead library with the API allows for rapid setup and deployment of geographical autocomplete search fields. 
 
-This is the official plugin SDK for the EZ Geo Query API. 
-
-Ez Geo Query is an API service to provide autoresult suggestions for City, State, ZIP search string combinations. It returns data in a consistent format and is currently being developed to provide more data, such as population, median income, and latitude longitude coordinates. Using this typeahead plugin with the API allows for rapid setup and deployment of geographical autocomplete search fields. 
 
 
 
@@ -168,11 +167,11 @@ There is a minimal style included inline. It should work pretty well with any in
 
 Behind the typeahead library is the [Ez Geo API](https://ezgeoquery.us/). We've written algorithms to interact with our data in order to return city, state, zip results reliably and consistently, making building anything (such as registration forms with user's geographical data, address, etc.) that requires this data a breeze.
 
-Below you can see the various search query combinations that the API accepts and will return results for. Our plugin also searches by partial match and allows you to enter a portion of any part of the combination, such as "Sea, WA 981" for Seattle, Washington locations whose zip start with 981XX.
+Below you can see the various search query combinations that the API accepts and will return results for. Our typeahead library also searches by partial match and allows you to enter a portion of any part of the combination, such as "Sea, WA 981" for Seattle, Washington locations whose zip start with 981XX.
 
 ### Getting Started
 
-First, get your *free* API key from [Ez Geo API](https://ezgeoquery.us/). You can then begin to query our endpoints. Currently Ez Geo API has two endpoints available.
+First, get your *free* API key from [Ez Geo API](https://ezgeoquery.us/). You can then begin to query our endpoints.
 
 #### Authorization Header
 
@@ -190,13 +189,17 @@ $.ajax({
 });
 ```
 
-#### Popular
+### Endpoints
+
+Currently Ez Geo API has two endpoints available.
+
+#### /popular
 
 `https://ezgeoquery.us/api/popular`
 
 Return the 50 most popular cities in the united states. This is used in the typeahead library to prefetch on initialization.
 
-#### Query
+#### /query
 
 `https://ezgeoquery.us/api/query/<query>`
 
@@ -204,7 +207,7 @@ Query a City, State or Zip with any of the following formats mentioned below.
 
 **NOTE** Currently the response will contain the top 5 hits for the query.
 
-#### Formats that work with our API/plugin:
+#### Formats that work with the query enpoint:
 
 `City, State, Zip` - `City, Zip` - `State, Zip` - `City, State` - `City,` - `Zip` - `City` - `City State Zip` - `City Zip` - `State Zip` - `City State` - `City,State,Zip` - `City,Zip` - `City,State` - `City , Zip` - `City City, Zip`
 
