@@ -8,11 +8,15 @@ Ez Geo Query is an API service to provide autoresult suggestions for City, State
 
 ### Example
 
-```javascript
-// Query by city
-$.get(https://ezgeoquery.us/query/sea);
+##### Query by City
 
-// Response 
+```javascript
+$.get(https://ezgeoquery.us/query/sea);
+```
+
+##### Response
+
+```javascript
 [ 
   { "zip_code": "61476", "city": "Seaton", "state": "IL" }, 
   { "zip_code": "61359", "city": "Seatonville", "state": "IL" }, 
@@ -20,11 +24,19 @@ $.get(https://ezgeoquery.us/query/sea);
   { "zip_code": "98032", "city": "SeaTac", "state": "WA"}, 
   { "zip_code": "98148", "city": "SeaTac", "state": "WA"} 
 ]
+```
 
-// Query by Zip
+
+
+##### Query by Zip
+
+```javascript
 $.get(https://ezgeoquery.us/query/425);
+```
 
-// Response
+##### Response
+
+```javascript
 [ 
   { "zip_code": "42501", "city": "Burnside", "state": "Kentucky" }, 
   { "zip_code": "42503", "city": "Burnside", "state": "Kentucky" }, 
