@@ -2,7 +2,6 @@
 
 Ez Ego Query is a API #BRENDEN
 
----
 
 ## Ez Geo Typeahead
 
