@@ -5,7 +5,6 @@ This is the official plugin SDK for the EZ Geo Query API.
 Ez Geo Query is an API service to provide autoresult suggestions for City, State, ZIP search string combinations. It returns data in a consistent format and is currently being developed to provide more data, such as population, median income, and latitude longitude coordinates. Using this typeahead plugin with the API allows for rapid setup and deployment of geographical autocomplete search fields. 
 
 
-
 ## Ez Geo Typeahead
 
 Ez Geo Typeahead is a typeahead library build on top of [typeahead.js](https://github.com/corejavascript/typeahead.js) using the [Ez Geo Query API](https://ezgeoquery.us/). It was designed to be a drop in, turn-key autocomplete solution for querying Zip Codes, Cities and States in the US. Under the hood it also uses the [Bloodhound engine](https://github.com/corejavascript/typeahead.js/blob/master/doc/bloodhound.md) to query the API.
@@ -161,7 +160,7 @@ Query a City, State or Zip with any of the following formats mentioned below.
 
 #### Formats that work with our API/plugin:
 
-`City, State, Zip` - `City, Zip` - `State, Zip` - `City, State` - `City,` - `Zip` - `City` - `City State Zip` - `City Zip` - `State Zip` - `City State` - `City,State,Zip` - `City,Zip` - `City,State` - `City , zip` - `City city, zip`
+`City, State, Zip` - `City, Zip` - `State, Zip` - `City, State` - `City,` - `Zip` - `City` - `City State Zip` - `City Zip` - `State Zip` - `City State` - `City,State,Zip` - `City,Zip` - `City,State` - `City , Zip` - `City City, Zip`
 
 
 
