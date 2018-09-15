@@ -1,6 +1,6 @@
 # :facepunch: Ez Geo Query
 
-Ez Geo Query is an API service to provide autoresult suggestions for City, State ZIP search string combinations. It returns data in a consistent format and is currently being developed to provide more data, such as population, median income, and latitude longitude coordinates. Using this typeahead plugin with the API allows for rapid setup and deployment of geographical autocomplete search fields.
+Ez Geo Query is an API service to provide autoresult suggestions for City, State, ZIP search string combinations. It returns data in a consistent format and is currently being developed to provide more data, such as population, median income, and latitude longitude coordinates. Using this typeahead plugin with the API allows for rapid setup and deployment of geographical autocomplete search fields.
 
 
 ## Ez Geo Typeahead
