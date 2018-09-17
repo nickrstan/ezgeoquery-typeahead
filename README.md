@@ -161,7 +161,7 @@ $input.typeahead.on('typeahead:valueUpdated', function(ev, value) {
 
 ## Set the current value
 
-To set the current value, use the `currentValue` setter. This accepts an object which should be formatted as a [`EzGeoQuery`](https://github.com/nickrstan/ezgeoquery-typeahead/blob/master/src/models.ts). This is trigger a `valueUpdated` event and set the input's `value` property to a formatted string. `City, ST, Zip`.
+To set the current value, use the `currentValue` setter. This accepts an object which should be formatted as a [`EzGeoQuery`](https://github.com/nickrstan/ezgeoquery-typeahead/blob/e9525bc09207947101ba18024426760a99903935/src/models.ts#L1). This is trigger a `valueUpdated` event and set the input's `value` property to a formatted string. `City, ST, Zip`.
 
 ```javascript
 // Set the value
