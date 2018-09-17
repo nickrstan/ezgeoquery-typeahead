@@ -128,8 +128,10 @@ class BloodhoundTypeahead {
   private _options: EzGeoTypeaheadOptions = defaultEzGeoOptions;
 
   private _currentValue: EzGeoQuery = {};
-  set currentValue(value: any) {
+  set currentValue(value: EzGeoQuery) {
     this._currentValue = value;
+    this._typeahead.typeahead('val', this._inputDisplay(this.currentValue));
+    this._triggerValueChangeEvent();
   }
   
   get currentValue() {
@@ -184,6 +186,14 @@ class BloodhoundTypeahead {
   }
 
   /**
+   * Update the input value, not the currentValue.
+   *  DO not trigger and update event
+   */
+  private _updateInputValue(value: EzGeoQuery): void {
+    this._typeahead.typeahead('val', this._inputDisplay(value));
+  }
+
+  /**
    * Build a string to display in the input field, and suggestion typeahead result lists
    * 
    * @param geo | ezgeoquery object 
@@ -199,7 +209,7 @@ class BloodhoundTypeahead {
    * @param query
    * @param settings 
    */
-  private _prepare(query: string, settings: any ) {
+  private _prepare(query: string, settings: any) {
     settings.url = settings.url + this._urlDirectory + query;
     settings.headers = {
       "x-authorization": this._apikey
@@ -344,7 +354,9 @@ class BloodhoundTypeahead {
    */
   private _select(): void {
     this._typeahead.on('typeahead:select', (ev, selection) => {
-      this.currentValue = selection;
+      // tap into the raw property here
+      this._currentValue = selection;
+      // which means we should trigger an update event
       this._triggerValueChangeEvent();
       this.currentSuggestions = [];
     });
@@ -380,6 +392,20 @@ class BloodhoundTypeahead {
     }
   }
 
+  private _defaultPreviousInput() {
+    this._typeahead.bind('typeahead:change', (e) => {
+      const inputValue = this._typeahead.typeahead('val');
+      if (inputValue == '') {
+        // tap into the raw property here
+        this._currentValue = {};
+      }
+    })
+  }
+
+  private _triggerValueChangeEvent() {
+    this._typeahead.trigger('typeahead:valueUpdated', this.currentValue);
+  }
+
   /* Optional Methods */
 
   /**
@@ -394,16 +420,16 @@ class BloodhoundTypeahead {
    * This only works for clicking off, tabbing off is handled internally with the autoselect typeahead option
    */
   private _selectFirst(): void {
-    this._typeahead.on('typeahead:close', (e) => {
+    this._typeahead.on('typeahead:close', () => {
       if (this.currentSuggestions.length > 0) {
         const firstSuggestion: EzGeoQuery = this.currentSuggestions[0];
 
         if (Object.keys(this.currentValue).length !== 0 && (this.currentValue.zip_code == firstSuggestion.zip_code)) {
-          this._typeahead.typeahead('val', this._inputDisplay(this.currentValue));
+          // reset the input value, dotn trigger event as it is the same.
+          this._updateInputValue(this.currentValue);
         } else {
-          this._typeahead.typeahead('val', this._inputDisplay(firstSuggestion));
+          // update the value
           this.currentValue = firstSuggestion;
-          this._triggerValueChangeEvent();
           this.currentSuggestions = [];
         }
       }
@@ -428,24 +454,11 @@ class BloodhoundTypeahead {
         const inputDisplay = this._inputDisplay(this.currentValue);
 
         if ( this.currentSuggestions.length == 0 || inputValue !== inputDisplay) {
-          this._typeahead.typeahead('val', inputDisplay);
+          // reset the input value, dotn trigger event as it is the same.
+          this._updateInputValue(this.currentValue);
         }
       }
     })
-  }
-
-  private _defaultPreviousInput() {
-    this._typeahead.bind('typeahead:change', (e) => {
-      const inputValue = this._typeahead.typeahead('val');
-      if (inputValue == '') {
-        this.currentValue = {};
-        this._triggerValueChangeEvent();
-      }
-    })
-  }
-
-  private _triggerValueChangeEvent() {
-    this._typeahead.trigger('typeahead:valueUpdated', this.currentValue);
   }
 }
 
