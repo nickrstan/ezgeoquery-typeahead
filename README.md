@@ -1,5 +1,5 @@
 # :facepunch: Ez Geo Query
- 
+
 Ez Geo Query is an API service to provide autoresult suggestions for City, State, ZIP search string combinations. It returns data in a consistent format and is currently being developed to provide more data, such as population, median income, and latitude longitude coordinates. Using the typeahead library with the API allows for rapid setup and deployment of geographical autocomplete search fields. 
 
 
@@ -153,9 +153,34 @@ $input.typeahead.on('typeahead:valueUpdated', function(ev, value) {
     console.log(value);
 });
 
-// both would output from Searcy, AR, 72143
+// From the input value of Searcy, AR, 72143, both would log
 // { zip_code: "72143", city: "Searcy", state: "AR" }
 ```
+
+
+
+## Set the current value
+
+To set the current value, use the `currentValue` setter. This accepts an object which should be formatted as a [`EzGeoQuery`](https://github.com/nickrstan/ezgeoquery-typeahead/blob/master/src/models.ts). This is trigger a `valueUpdated` event and set the input's `value` property to a formatted string. `City, ST, Zip`.
+
+```javascript
+// Set the value
+var newValue = {
+    city: 'Hello',
+    state: 'MY',
+    zip_code: '420'
+};
+
+$input.currentValue = newValue;
+
+// The new value 
+// { city: "Sea", state: "WA", zip_code: "98" }
+
+// And the input will show
+// Hello, MY, 420
+```
+
+
 
 
 
